@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  namespace :api do
+    namespace :v1 do
+      resources :shops do
+        resources :photos, only: %i[index]
+      end
+      resources :line_photos, only: %i[index create]
+      put 'line_photos/replace', to: 'line_photos#replace'
+      resources :orders, only: %i[create]
+    end
+  end
+  
 end
