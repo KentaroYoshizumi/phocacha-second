@@ -143,9 +143,9 @@ export const Photos = ({
                 <PhotoWrapper
                   photo={photo}
                   onClickPhotoWrapper={
-                    (food) => setState({
+                    (photo) => setState({
                       ...state,
-                      selectedPhoto: food,
+                      selectedPhoto: photo,
                       isOpenOrderDialog: true,
                     })
                   }

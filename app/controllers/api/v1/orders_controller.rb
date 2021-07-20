@@ -16,7 +16,7 @@ module Api
       private
 
       def total_price(posted_line_photos)
-        posted_line_foods.sum {|line_photo| line_photo.total_amount } + posted_line_photos.first.shop.fee
+        posted_line_photos.sum {|line_photo| line_photo.total_amount } + posted_line_photos.first.shop.fee
       end
     end
   end

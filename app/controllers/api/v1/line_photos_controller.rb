@@ -7,7 +7,7 @@ module Api
         if line_photos.exists?
           render json: {
             line_photo_ids: line_photos.map { |line_photo| line_photo.id },
-            restaurant: line_photos[0].shop,
+            shop: line_photos[0].shop,
             count: line_photos.sum { |line_photo| line_photo[:count] },
             amount: line_photos.sum { |line_photo| line_photo.total_amount },
           }, status: :ok
